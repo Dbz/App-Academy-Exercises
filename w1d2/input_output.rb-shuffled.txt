@@ -1,0 +1,30 @@
+    elsif player_number > computer_number
+end
+def guessing_game
+  end
+# guessing_game
+  puts "You got it!"
+    if player_number < computer_number
+
+  File.open("#{input_name}-shuffled.txt","w") do |file|
+      file.puts line
+  player_number = nil
+  computer_number = rand(100) + 1
+  lines.shuffle!
+    end
+      puts "Too high"
+shuffle_file
+  print "What file should we shuffle? "
+
+  input_name = gets.chomp
+    end
+    lines.each do |line|
+      puts "Too low"
+  end
+  while computer_number != player_number
+def shuffle_file
+  lines = File.readlines(input_name)
+    print "Please guess a number: "
+end
+
+    player_number = Integer(gets.chomp)
