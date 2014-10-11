@@ -136,3 +136,11 @@ end
 
 
 #p make_change(14, [10, 7, 1])
+
+def sub_sets(arr)
+  return [[]] if arr.empty?
+  subs = sub_sets(arr.take(arr.count() -1))
+  subs.concat(subs.map { |sub| sub + [arr.last] })
+end
+
+p sub_sets([1,2,3])
