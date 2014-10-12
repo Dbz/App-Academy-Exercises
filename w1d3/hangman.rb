@@ -42,11 +42,8 @@ class Game
     @number_of_guesses == 0 || @board.guessed_word == @chosen_word
   end
 end
-#
-# class Player
-# end
 
-class HumanPlayer# < Player
+class HumanPlayer
   def guess_letter(current_board)
     guess = gets.chomp.scan(/[a-z]{1}/)
     guess[0]
@@ -62,7 +59,7 @@ class HumanPlayer# < Player
   end
 end
 
-class ComputerPlayer# < Player
+class ComputerPlayer
   def initialize
     @guessed_letters = []
     @dictionary = Dictionary.new
@@ -133,7 +130,6 @@ class Board
   end
   
   def correct_guess?(letter)
-    # puts "in correct guess, letter: #{letter}"
     if @word.split(//).include?(letter)
        update_guessed_word(letter)
        return true

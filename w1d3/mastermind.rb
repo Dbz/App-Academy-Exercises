@@ -16,6 +16,7 @@ class Game
     puts "Welcome to Mastermind."
     @turns = 10
     @pegs = Array.new(4) { Peg.new }
+    p @pegs.map { |p| p.color }
     
     until game_over?
       get_user_input
@@ -27,8 +28,11 @@ class Game
   end
   
   def get_user_input
+    # FIX: doesn't like spaces in the input
     puts "Please pick your combination(R, G, B, Y, O, P)"
     @guessed_pegs = gets.chomp.upcase.scan(/[RGBYOP]{4}/).first.split('')
+    #p "guessed_pegs: #{@guessed_pegs}"
+    get_user_input if @guessed_pegs.nil? || @guessed_pegs.count != 4
   end
   
   def check_match
@@ -51,10 +55,10 @@ class Game
     end
     
     #Find right color wrong spot
-    dup_guessed.each do |color|
+    dup_guessed.each_with_index do |color, i|
       if colors.include? color
         @messages << "RW"
-        colors.delete_at(colors.index(color))
+        colors.delete_at(i)
       end
     end
   end
