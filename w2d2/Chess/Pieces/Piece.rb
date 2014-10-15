@@ -1,0 +1,30 @@
+class Piece
+  
+  attr_accessor :pos, :color
+  
+  
+  
+  def initialize(pos, color, board)
+    @board = board
+    @pos = pos
+    @color = color    
+  end
+  
+  def in_bounds?(position)
+    x, y = position[0], position[1]
+    x >= 0 && x < 8 &&
+    y >= 0 && y < 8
+  end
+  
+  def to_s
+    @symbol
+  end
+  
+  def dup_piece(new_board)
+   self.class.new(@pos, @color, new_board)
+  end
+  
+  
+  
+  
+end
