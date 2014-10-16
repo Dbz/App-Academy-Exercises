@@ -47,11 +47,10 @@ class Board
   end
   
   def color(idx1, idx2)
-    
     if (idx1.even? && idx2.even?) || (idx1.odd? && idx2.odd?)
-      :blue
+      :brown
     else
-      :yellow
+      :white
     end
   end
   
@@ -102,35 +101,56 @@ class Board
   end
   
   def check_mate?(color)
-    return false unless check color
+    return false unless self.check?(color)
+    pieces = pieces(color)
     
-    @grid.each_with_index do |row, i|
-      row.each_with_index do |piece, j|
-        next if piece.nil? || piece.color != color
-        moves = piece.moves
-        moves.each do |dest|
-          b = self.dup
-          p = b[[i, j]]
-          b.make_move([p, dest])
-          return false unless b.check? color
+    pieces.each do |piece|
+      moves = piece.moves
+      moves.each do |dest|
+        b = self.dup
+        p = b[piece.pos]
+        b.make_move([p, dest])
+        unless b.check?(color)
+          return false
         end
       end
     end
     true
   end
   
+  def pieces(color)
+    @grid.flatten.compact.select {|piece| piece.color == color }
+  end
+  
   def enemy_piece?(pos, color)
-    return false if @grid[pos].nil? 
+    return false if self[pos].nil? 
     self[pos].color == color
   end
   
-  def make_move(arr)
-    piece = arr[0]
-    dest = arr[1]
-    p dest
+  def make_move(piece, dest)
+    #For castling
+    if piece.is_a?(King) && (piece.pos[0] - dest[0]).abs == 2
+      if dest[0] < piece.pos[0]
+        rook = self[[0, piece.pos[1]]]
+        new_pos = [piece.pos[0] - 1, piece.pos[1]]
+        make_move(rook, new_pos)
+      else
+        rook = self[[7, piece.pos[1]]]
+        new_pos = [piece.pos[0] + 1, piece.pos[1]]
+        make_move(rook, new_pos)
+      end
+    end
+    
     self[piece.pos] = nil
     self[dest] = piece
     piece.pos = dest
+
+  end
+  
+  def castle
+    
+    
+    
   end
   
   private
@@ -171,13 +191,5 @@ class Board
     self[[4,0]] = King.new([4,0], true, self)
     self[[4,7]] = King.new([4,7], false, self)
   end
-  
-  
 end
-
-# b = Board.new
-# a = b.dup
-# a[[0,0]] = nil
-# a.display
-# b.display
 

@@ -31,31 +31,34 @@ class SlidingPiece < Piece
   
   def valid_pos(arr)
     valid_slides = []
-    starting = arr.index(@pos)
-    ((starting + 1)...arr.length).each do |i|
-      p arr[i]
-      if @board[arr[i]].nil?
-        valid_slides << arr[i]
-      elsif @board.enemy_piece?(arr[i], !@color)
-        valid_slides << arr[i]
+    
+    starting_pos = arr.index(@pos)
+    
+    arr[starting_pos + 1 .. -1].each do |p|
+      if @board[p].nil?
+        valid_slides << p
+      elsif @board[p].color != @color
+        valid_slides << p
         break
       else
         break
       end
     end
     
-    (0...starting).each do |i|
-      if @board[arr[i]].nil?
-        valid_slides << arr[i]
-      elsif @board.enemy_piece?(arr[i], !@color)
-        valid_slides << arr[i]
-        break
+    arr[0...starting_pos].reverse.each do |p|
+      if @board[p].nil?
+        valid_slides << p
+      elsif @board[p].color != @color
+        valid_slides << p
+        break 
       else
-        break
+        break 
       end
     end
     
     valid_slides
   end
+  
+  
   
 end

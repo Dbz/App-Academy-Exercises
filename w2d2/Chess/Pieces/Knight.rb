@@ -21,8 +21,4 @@ class Knight < SteppingPiece
     end
     super
   end
-
-  
 end
-
-#knight = Knight.new([4,4], "black", )

@@ -1,8 +1,5 @@
 class Piece
-  
   attr_accessor :pos, :color
-  
-  
   
   def initialize(pos, color, board)
     @board = board
@@ -21,10 +18,12 @@ class Piece
   end
   
   def dup_piece(new_board)
-   self.class.new(@pos, @color, new_board)
+   self.class.new(@pos.dup, @color, new_board)
   end
   
-  
-  
-  
+  def moved_into_check?(start, dest)
+    b = @board.dup
+    b.make_move(b[start], dest)
+    b.check? b[dest].color
+  end
 end

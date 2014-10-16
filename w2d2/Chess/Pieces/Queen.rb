@@ -9,8 +9,14 @@ class Queen < SlidingPiece
     end
     super
   end
-  def move_dirs
+  
+  def moves
+    new_moves = []
     # moves returns [rows, cols, diags]
-    moves
+    super.each do |arr|
+      new_moves += arr
+    end
+    new_moves
   end
+  
 end

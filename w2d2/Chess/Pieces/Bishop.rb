@@ -12,9 +12,9 @@ class Bishop < SlidingPiece
       
   end
   
-  def move_dirs
+  def moves
     # moves returns [rows, cols, diags]
-   moves[2]
+    super.last
   end
   
 end

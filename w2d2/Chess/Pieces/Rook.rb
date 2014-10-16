@@ -1,7 +1,9 @@
 # encoding: UTF-8
 # require 'SlidingPiece.rb'
 class Rook < SlidingPiece
+  attr_accessor :has_moved
   def initialize(pos, color, board)
+    @had_moved = false
     if color
       @symbol = "♖"
     else
@@ -9,8 +11,14 @@ class Rook < SlidingPiece
     end
     super
   end
-  def move_dirs
+  
+  def pos=(value)
+    @pos = value
+    @has_moved = true
+  end
+  
+  def moves
     # moves returns [rows, cols, diags]
-    moves[0..1]
+    super[0] + super[1]
   end
 end

@@ -9,13 +9,15 @@ class SteppingPiece < Piece
     valid_steps = []
     start_x, start_y = @pos[0], @pos[1]
     self.class::OFFSETS.each do |x, y|
-      valid_steps << [x + start_x, y + start_y] if in_bounds?([x + start_x, y + start_y])
+      if in_bounds?([x + start_x, y + start_y])
+        valid_steps << [x + start_x, y + start_y]
+      end
     end
 
     valid_pos(valid_steps)
   end
   
   def valid_pos(arr)
-    arr.select! { |p| @board[p].nil? || @board[p].color != @color }
+    arr.select { |p| @board[p].nil? || @board[p].color != @color }
   end
 end
