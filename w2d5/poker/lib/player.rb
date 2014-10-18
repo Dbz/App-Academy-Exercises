@@ -1,8 +1,8 @@
-require 'hand'
-require 'card'
+require 'hand.rb'
+require 'card.rb'
 
 class Player
-  attr_accessor :pot
+  attr_accessor :pot, :money, :cards
   def initialize(money)
     @pot = 0
     @money = money
@@ -15,7 +15,7 @@ class Player
       @hand = Hand.new(cards)
     end
   end
-  
+
   def discard
     puts "Please choose up to three cards to discard e.g. 135"
     diplay_hand
@@ -29,13 +29,13 @@ class Player
     end
     discards
   end
-  
+
   def display_hand
     cards.each_with_index do |card, i|
       print "(#{i+1})|#{card.value}:#{card.suit}|"
     end
   end
-  
+
   def action(amount)
     puts "Would you like to fold, call, or raise? (f, c, or r)"
     input = gets.chomp.downcase
@@ -57,12 +57,16 @@ class Player
       puts "How much money would you like to raise by?"
       input = gets.chomp.to_i
       if amount + input > money
-        raise "you fucking suck"
+        raise "You just raised to more money than you have!"
       else
         @pot += amount + input
         @money -= amount + input
         return amount + input
       end
     end
-  end  
+  end
+  
+  def cards
+    @hand.cards
+  end
 end

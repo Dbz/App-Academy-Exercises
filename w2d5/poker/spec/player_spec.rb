@@ -12,7 +12,7 @@ describe Player do
   end
   
   describe "handling cards" do
-    let(:player) { Player.new }
+    let(:player) { Player.new(100) }
     let(:cards) { Array.new(5) { Card.new(5, :hearts) } }
     it "takes cards" do
       player.give_cards(cards)
