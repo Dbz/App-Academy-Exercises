@@ -15,7 +15,7 @@ class Board
   attr_accessor :grid
   
   def initialize
-    @grid = Array.new(8) { Array.new(8) {nil} }
+    @grid = Array.new(8) { Array.new(8) { nil } }
     populate
   end
   
@@ -118,10 +118,6 @@ class Board
     true
   end
   
-  def pieces(color)
-    @grid.flatten.compact.select {|piece| piece.color == color }
-  end
-  
   def enemy_piece?(pos, color)
     return false if self[pos].nil? 
     self[pos].color == color
@@ -146,6 +142,10 @@ class Board
   end
   
   private
+  
+  def pieces(color)
+    @grid.flatten.compact.select {|piece| piece.color == color }
+  end
   
   def set_pawns
     (0..7).each do |i|
