@@ -1,9 +1,3 @@
-App-Academy-Exercises
-=====================
-
-Week 1
-======
-
 Day 1
 ---
 **Main Project**: Convert an Integer to itself in words (up to 1,000,000!)
