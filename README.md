@@ -101,7 +101,7 @@ Day 4
 ---
 **Main Project**: Checkers
 
-Partner: All Me ;)
+Partner: None (solo day)
 
 Focus:
 
@@ -118,3 +118,67 @@ Focus:
 
 * RSpec
 * test-driven development
+
+Week 3
+======
+
+Day 1
+---
+**Main Project**: [SQLZoo](sqlzoo.net)
+
+Partner: Isis Wenger
+
+Focus:
+
+* SQL basics
+
+No work uploaded to GitHub; just did problems at SQLZoo.
+
+Day 2
+---
+**Main Project**: App Academy Questions app
+
+Partner: Anastasia Zorko
+
+Focus:
+
+* Object-relational mapping
+* more SQL
+* a little metaprogramming
+
+Day 3
+---
+**Main Project**: URL Shortener
+
+Partner: Erik Strom
+
+Focus:
+
+* database migrations
+* models
+* validations (at both the database and model levels)
+* database indexes
+* associations
+
+Day 4
+---
+**Main Project**: Survey app
+
+Partner: Weihao Li
+
+Focus:
+
+* optimizing ActiveRecord/SQL (avoiding N+1 queries with eager loading)
+* the border between SQL and ActiveRecord (```find_by_sql```, ```#joins```, ```#select```, ```#where```)
+
+Day 5
+---
+**Main Project**: ActiveRecord Lite
+
+Partner: None (solo day)
+
+Focus:
+
+* metaprogramming
+* scope
+* modules
