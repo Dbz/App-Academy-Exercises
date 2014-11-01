@@ -1,0 +1,15 @@
+<h2> Browse Our Albums! </h2>
+<% @albums.each do |album| %>
+  <li>
+    <%= link_to album.name, album_url(album) %>
+  </li>
+	<%= button_to ("Edit " + album.name), edit_album_url(album), method: "get" %>
+	<br>
+<% end %>
+
+<%= button_to "New Album!", new_band_album_url(@band), method: "get" %>
+<br>
+<%= button_to "All Bands", bands_url, method: "get" %>
+<br>
+<%= button_to ("Delete " + @band.name), band_url(@band), method: "delete" %>
+<br>

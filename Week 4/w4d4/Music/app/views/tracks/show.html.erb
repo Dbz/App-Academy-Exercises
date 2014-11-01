@@ -1,0 +1,12 @@
+<h2> <%= @track.name %> </h2>
+<p><%= @track.description %></p>
+
+<h3> Notes </h3>
+
+
+<%= render 'notes/form' %>
+
+<%= button_to "All Tracks", album_url(@track.album), method: "get" %>
+<br>
+<%= button_to ("Delete " + @track.name), track_url(@track), method: "delete" %>
+<br>
