@@ -1,0 +1,9 @@
+<h2>These are the subs. They're mostly about cats</h2>
+<br>
+<ul>
+  <% @subs.each do |sub| %>
+    <li>
+    <%= link_to sub.title, sub_url(sub) %>
+    </li>
+  <% end %>
+</ul>

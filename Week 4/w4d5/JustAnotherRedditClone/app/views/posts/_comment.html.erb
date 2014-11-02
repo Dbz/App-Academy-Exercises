@@ -1,0 +1,13 @@
+<li>
+  <strong>Author <%= comment.author.username %></strong>
+  <br>
+  <p><%= comment.content %></p>
+</li>
+<% unless comment.children.empty? %>
+  <ul>
+    <% comment.children.each do |c| %>
+      <%= render "comment", comment: c %>
+    <% end %>
+  </ul>
+<% end %>
+    

@@ -1,0 +1,14 @@
+<h2><%= @sub.title %></h2>
+<h3> <%= @post.title %></h3>
+
+<p> <%= @post.content %> </p>
+
+
+
+<ul>
+<% @post.top_level_comments.each do |c| %>
+  <%= render("comment", comment: c)  %>
+<% end %>
+</ul>
+
+
