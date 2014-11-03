@@ -1,0 +1,29 @@
+				
+				<form action="/session" method="POST" role="form">
+					<input
+					type="hidden"
+					name="authenticity_token"
+					value="<%= form_authenticity_token %>">
+  
+					<div class="row">
+						<div class="col-xs-4">
+							<div class="form-group">
+								<label for="user_username">Username</label>
+								<input class="form-control" type="text" name="user[username]" id="user_username">
+								<br>
+							</div>
+						</div>
+					</div>
+  
+					<div class="row">
+						<div class="col-xs-4">
+							<div class="form-group">
+								<label for="user_password">Password</label>
+								<input class="form-control" type="password" name="user[password]" id="user_password">
+								<br>
+							</div>
+						</div>
+					</div>
+          	<button type="submit" class="btn btn-primary">Log in!</button>
+					<!-- <button type="submit" data-target="sign-in-modal" data-toggle="modal" class="btn btn-primary">Log in!</button> -->
+				</form>

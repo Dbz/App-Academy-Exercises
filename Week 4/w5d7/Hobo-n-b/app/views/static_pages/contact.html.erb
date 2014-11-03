@@ -1,0 +1,82 @@
+<div class="wrapper">
+	<div class="row">
+	
+		<div class="col-xs-4 col-xs-offset-1">
+			<h3> Contact Us </h3>
+			<form action="<%= contact_url  %>" method="POST" role="form">
+	
+				<input
+				type="hidden"
+				name="authenticity_token"
+				value="<%= form_authenticity_token %>">
+  
+				<label>Personal Information </label>
+	
+				<div class="row">
+					<div class="col-xs-9">
+						<div class="form-group">
+							<label for="name">Full Name</label>
+							<input class="form-control" type="text" name="contact[name]" id="name">
+							<br>
+						</div>
+					</div>
+				</div>
+  
+				<div class="row">
+					<div class="col-xs-9">
+						<div class="form-group">
+							<label for="email">Email Address</label>
+							<input class="form-control" type="text" name="contact[email]" id="email">
+							<br>
+						</div>
+					</div>
+				</div>
+	
+				<label>What can we help you with? </label>
+	
+				<div class="row">
+					<div class="col-xs-9">
+						<div class="form-group">
+							<label for="subject">Subject</label>
+							<input class="form-control" type="text" name="contact[subject]" id="subject">
+							<br>
+						</div>
+					</div>
+				</div>
+	
+				<div class="row">
+					<div class="col-xs-9">
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea class="form-control" name="contact[message]" id="message"> </textarea>
+							<br>
+						</div>
+					</div>
+				</div>
+
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+ 
+		<div class="col-xs-4">
+			<h3> Founders </h3>
+		
+			<table class="table">
+				<tr>
+					<th> Co-Founder </th>
+					<th> Number</th>
+				</tr>
+				<tr>
+					<td> Anastasia Zorko</td>
+					<td>(408)9121-324 </td>
+				</tr>
+				<tr>
+					<td> Daniel Burt</td>
+					<td>(408)3576-324 </td>
+				</tr>
+			</table>
+		</div>
+	
+	</div>
+</div>
+		
