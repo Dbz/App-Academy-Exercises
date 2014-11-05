@@ -1,0 +1,7 @@
+<p> hi </p>
+
+<ul>
+	<% @posts.each do |post| %>
+		<li><%= post.title %>: <%= post.body %></li>
+	<% end %>
+</ul>
