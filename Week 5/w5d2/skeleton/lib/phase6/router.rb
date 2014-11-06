@@ -40,7 +40,7 @@ module Phase6
     # for syntactic sugar :)
     def draw(&proc)
       # proc.call(Route.instance_eval)
-      self.instance_eval proc
+      self.instance_eval &proc
     end
 
     # make each of these methods that

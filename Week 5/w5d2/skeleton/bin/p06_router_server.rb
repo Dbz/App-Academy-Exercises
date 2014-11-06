@@ -29,16 +29,36 @@ class StatusesController < Phase6::ControllerBase
   end
 end
 
-class Cats2Controller < Phase6::ControllerBase
+class CatsController < Phase6::ControllerBase
   def index
     render_content($cats.to_s, "text/text")
+  end
+  def new
+    @cat = Cat.new
+    render :new
+  end
+  def create
+    puts "printing params"
+    p params
+    $cats << Cat.new(params[:cat]["name"], params[:cat]["owner"])
+    invoke_action :index
+  end
+    
+end
+
+class Cat
+  attr_accessor :name, :owner
+  def initialize(name="", owner="")
+    @name, @owner = name, owner
   end
 end
 
 router = Phase6::Router.new
 router.draw do
-  get Regexp.new("^/cats$"), Cats2Controller, :index
+  get Regexp.new("^/cats$"), CatsController, :index
   get Regexp.new("^/cats/(?<cat_id>\\d+)/statuses$"), StatusesController, :index
+  get Regexp.new("^/cats/new"), CatsController, :new
+  post Regexp.new("^/cats"), CatsController, :create
 end
 
 server = WEBrick::HTTPServer.new(Port: 3000)
