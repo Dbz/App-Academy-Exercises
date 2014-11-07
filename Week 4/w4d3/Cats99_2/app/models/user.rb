@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   validates :user_name, :password_digest, :session_token,
     presence: true
 
+    before_validation :ensure_session_token
+    
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
@@ -20,6 +22,10 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+  
+  def ensure_session_token
+    self.session_token = SecureRandom.base64(16)
   end
 
   has_many :cat_rental_requests
