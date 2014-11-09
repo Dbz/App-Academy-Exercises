@@ -12,7 +12,7 @@ end
   sub.description = Faker::Company.bs
   sub.save
 end
-
+#
 30.times do
   post = Post.new
   post.title = Faker::Company.catch_phrase
@@ -27,6 +27,6 @@ end
   comment.content = Faker::Lorem.sentence
   comment.author_id = User.all.sample.id
   comment.post_id = Post.all.sample.id
-  comment.parent_comment_id = [nil, Comment.all.sample.id].sample
+  comment.parent_comment_id = [Comment.all.sample.id].sample
   comment.save
 end

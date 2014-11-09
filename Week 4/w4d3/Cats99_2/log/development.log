@@ -18474,3 +18474,18 @@ Started POST "/__better_errors/f024a3ad0287126c/variables" for 127.0.0.1 at 2014
 Started POST "/__better_errors/f024a3ad0287126c/eval" for 127.0.0.1 at 2014-11-06 00:51:26 -0800
   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
   [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (6.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (20.8ms)[0m  DROP TABLE "cat_rental_requests"
+  [1m[36m (27.6ms)[0m  [1mCREATE TABLE "cat_rental_requests" ("id" serial primary key, "cat_id" integer NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "status" character varying(255) DEFAULT 'PENDING', "created_at" timestamp, "updated_at" timestamp, "user_id" integer NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_cat_rental_requests_on_cat_id" ON "cat_rental_requests" USING btree ("cat_id")
+  [1m[36m (3.6ms)[0m  [1mDROP TABLE "cats"[0m
+  [1m[35m (6.1ms)[0m  CREATE TABLE "cats" ("id" serial primary key, "birth_date" date NOT NULL, "color" character varying(255), "name" character varying(255) NOT NULL, "sex" character varying(255) NOT NULL, "description" text, "created_at" timestamp, "updated_at" timestamp, "user_id" integer DEFAULT 1 NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE  INDEX  "index_cats_on_name" ON "cats" USING btree ("name")[0m
+  [1m[35m (3.9ms)[0m  DROP TABLE "sessions"
+  [1m[36m (6.0ms)[0m  [1mCREATE TABLE "sessions" ("id" serial primary key, "user_agent" character varying(255) NOT NULL, "session_token" character varying(255) NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "index_sessions_on_session_token" ON "sessions" USING btree ("session_token")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_sessions_on_user_id" ON "sessions" USING btree ("user_id")[0m
+  [1m[35m (3.4ms)[0m  DROP TABLE "users"
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "user_name" character varying(255) NOT NULL, "password_digest" character varying(255) NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
