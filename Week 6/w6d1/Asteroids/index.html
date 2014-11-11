@@ -1,0 +1,25 @@
+<html style='background-color: black;'>
+<head>
+  <title>Asteroids</title>
+  <script src='keymaster.js'></script>
+  <script src='lib/utils.js'></script>
+  <script src='lib/movingObject.js'></script>
+  <script src='lib/asteroid.js'></script>
+  <script src='lib/bullet.js'></script>
+  <script src='lib/ship.js'></script>
+  <script src='lib/game.js'></script>
+  <script src='lib/gameView.js'></script>
+</head>
+<body>
+  <canvas id='game-space'></canvas>
+  <script type = 'text/javascript'>
+    var game = new ASTEROIDS.Game ();
+    var canvas = document.getElementById('game-space');
+    canvas.height = ASTEROIDS.Game.DIM_Y;
+    canvas.width = ASTEROIDS.Game.DIM_X;
+    
+    var gv = new ASTEROIDS.GameView(game, canvas);
+    gv.start();
+  </script>
+</body>
+</html>
