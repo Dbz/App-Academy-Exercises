@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#page-wrap {
+
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+/*  Nav */
+
+nav {
+  background: red;
+  min-height: 40px;
+  border-bottom: 3px solid black;
+}
+
+nav ul {
+  list-style: none;
+}
+nav #main-nav li.nav-link {
+  cursor: default;
+  display: inline-block;
+  float: left;
+  border-left: 3px solid black;
+  line-height: 40px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+nav a {
+  float: left;
+  padding-right: 230px;
+  line-height: 40px;
+  color: white;
+  border-left: 3px solid black;
+  padding-left: 20px;
+}
+
+#main-nav {
+  position: relative;
+  float: right;
+}
+
+nav #main-nav li:last-child {
+  border-right: 3px solid black;
+}
+
+nav #main-nav li.nav-link:hover {
+  background: #585858;
+}
+
+
+.drop-down {
+  position: relative;
+}
+
+.drop-down-menu {
+  display: none;
+}
+
+
+.drop-down:hover .drop-down-menu {
+  display: block;
+  position: absolute;
+  left: -3px;
+}
+
+.drop-down-menu li {
+/*  display: block;*/
+/*  position: relative;*/
+  color: black;
+  background: white;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  border-top: 3px solid black;
+  padding-left: 0;
+  line-height: 30px;
+  width: 250px;
+}
+
+.drop-down-menu li:last-child{
+  border-bottom: 3px solid black;
+}
+
+.drop-down-menu li:hover {
+  background: #b0b0b0;
+}
+
+/*  Body */
+
+#body-section {
+  border-left: 3px solid #C8C8C8;
+  border-right: 3px solid #C8C8C8;
+  overflow: auto;
+}
+#body-section h1 {
+  padding-bottom: 20px;
+}
+#side-bar {
+  margin: 20px;
+  float: left;
+  width: 22%;
+  border-right: 4px solid #C8C8C8;
+  padding-right: 20px;
+}
+#content {
+  margin: 20px 15px;
+  float: left;
+  width: 65%;
+}
+
+/*  Footer */
+
+footer {
+  position: inline-block;
+  background: #C8C8C8;
+  height: 70px;
+  border: 3px solid #A0A0A0;
+}
+footer h4 {
+  padding-left: 30px;
+  float: left;
+  line-height: 70px;
+}
+footer ul {
+  list-style: none;
+}
+footer li {
+  line-height: 70px;
+  float: right;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #888888;
+}
