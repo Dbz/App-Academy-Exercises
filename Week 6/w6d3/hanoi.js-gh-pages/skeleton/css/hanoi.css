@@ -1,0 +1,28 @@
+.disc {
+  height: 30px;
+}
+
+#a {
+  width: 50px;
+  background: fuchsia;
+}
+
+#b {
+  width: 60px;
+  background: cyan;
+}
+
+#c {
+  width: 70px;
+  background: teal;
+}
+
+.tower {
+  height: 120px;
+  width: 80px;
+  border: 2px solid black;
+  float: left;
+}
+
+#board {
+}

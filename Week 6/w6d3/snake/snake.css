@@ -1,0 +1,12 @@
+.tile {
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  float: left;
+  background: white;
+}
+
+#board {
+  width: 170px;
+}
