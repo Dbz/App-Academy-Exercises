@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cool Website</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+    <script src="./jquery.js"></script>
+    <script src="./tabs.js"></script>
+    <link href="./tabs.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    
+    <ul class='tabs' data-content-tabs='#content-tabs'>
+      <li><a href='#maine-coon' class='active'>Maine Coon</a></li>
+      <li><a href='#ocelot'>Ocelot</a></li>
+      <li><a href='#savannah'>Savannah</a></li>
+    </ul>
+    
+    <div id="content-tabs">
+      
+      <div class='tab-pane active' id='maine-coon'>
+        <p>Myths, legend and lore surround the Maine Coon Cat. Some are amusing, some are fantastic flights of fantasy and some are merely plausible. They certainly provide good material for conversation. Many books and articles dealing with these aspects of the Maine Coon Cat are available and have been well received as people never seem to tire of the subject and are always eager to learn more about this National Treasure.
+        </p>
+        
+      </div>
+      
+      <div class='tab-pane' id='ocelot'>
+        <p>Twice the size of the average house cat, the ocelot is a sleek animal with a gorgeous dappled coat. These largely nocturnal cats use keen sight and hearing to hunt rabbits, rodents, iguanas, fish, and frogs. They also take to the trees and stalk monkeys or birds. Unlike many cats, they do not avoid water and can swim well.</p>
+      </div>
+      
+      <div class='tab-pane' id='savannah'>
+        <p>The Savannah Cat is still a young breed, which has been created by crosses with the serval. After in the eighties of the past century already a successful breeding between a serval and a Siamese Cat has taken place, from 1994 on it became possible to achieve the breed of Savannah Cats regularly.</p>
+      </div>
+      
+    </div>
+
+    <script>
+      $(function() {
+        $('.tabs').tabs();
+      })
+    </script>    
+  </body>
+</html>

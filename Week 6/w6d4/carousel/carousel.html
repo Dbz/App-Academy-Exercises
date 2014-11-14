@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cat pictures</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+    <script src="./jquery.js"></script>
+    <script src="./carousel.js"></script>
+    <link href="./carousel.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    
+    <div class="carousel">
+      <div class="items">
+          <img src="http://blog.innovation.ca/wp-content/uploads/2013/02/GrumpyCat.png">
+          <img src="http://wptschedule.org/bemoretunedin/wp-content/uploads/2013/11/grumpy_cat_9.jpg">
+          <!-- <img src="http://rack.2.mshcdn.com/media/ZgkyMDEyLzEyLzAzLzE1XzM1XzQ0XzEzOF9maWxlCnAJdGh1bWIJODUweDU5MD4KZQlqcGc/5d4e4a62.jpg"> -->
+          <img src="http://pictures.thewebawards.com/1000/107/Grumpy-Cat-And-Smiling.jpg">
+      </div>
+
+      <a href="javascript:void(0)" class="slide-left">Prev</a>
+      <a href="javascript:void(0)" class="slide-right">Next</a>
+    </div>
+    
+    
+    <script>
+      $(function() {
+        $('.carousel').carousels();
+      })
+    </script>
+  </body>
+</html>
