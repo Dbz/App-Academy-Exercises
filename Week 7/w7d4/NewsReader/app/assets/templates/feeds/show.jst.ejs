@@ -1,0 +1,12 @@
+<h2> <%= feed.escape("title") %> </h2>
+
+<ul>
+<% feed.entries().each(function(entry) { %>
+  <li>
+		<h3><%= entry.escape("title") %> </h3>
+		<p><%= entry.escape("published_at") %> <p>
+			<%var entryObj = JSON.parse(entry.get("json"))%>
+		<p><%= entryObj["description"] %> <p>
+	</li>
+<% }); %>
+</ul>
